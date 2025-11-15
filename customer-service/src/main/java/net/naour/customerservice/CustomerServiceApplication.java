@@ -1,13 +1,16 @@
 package net.naour.customerservice;
 
+import net.naour.customerservice.config.CustomerConfigParams;
 import net.naour.customerservice.entities.Customer;
 import net.naour.customerservice.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties(CustomerConfigParams.class)
 public class CustomerServiceApplication {
 
     public static void main(String[] args) {

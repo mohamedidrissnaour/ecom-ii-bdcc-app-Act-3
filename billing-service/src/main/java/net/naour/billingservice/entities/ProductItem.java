@@ -2,10 +2,7 @@ package net.naour.billingservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import net.naour.billingservice.model.Product;
 
 @Entity
@@ -13,6 +10,7 @@ import net.naour.billingservice.model.Product;
 @AllArgsConstructor
 @Data
 @Builder
+@Getter @Setter
 public class ProductItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
