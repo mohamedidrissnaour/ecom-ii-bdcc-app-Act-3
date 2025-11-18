@@ -23,4 +23,9 @@ public class ProductItem {
     private String productId;
     @Transient //cette juste attribut dans la classe pas dans la bd
     private Product product;
+
+
+    public double getAmount() {
+        return unitPrice*quantity;
+    }
 }

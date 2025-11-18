@@ -22,7 +22,16 @@ public class Bill { //classe persistante il se trouve dans la bd
     private Date billingDate;
     @OneToMany(mappedBy = "bill")
     private List<ProductItem> productItems = new ArrayList<>();
-    private long customerId;
+    private Long customerId;
     @Transient  //cette attribut est dans la calsse mais auccun e relation avec la base de donnée
     private Customer customer;
+
+
+    public double getTotal() {
+        double somme = 0;
+        for (ProductItem pi : productItems) {
+            somme += pi.getAmount();
+        }
+        return somme;
+    }
 }
